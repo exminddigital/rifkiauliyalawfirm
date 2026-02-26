@@ -115,3 +115,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+/* SMOOTH SIDEBAR ACTIVE */
+
+(function() {
+    // Ambil elemen berdasarkan ID di HTML kamu
+    const hamburger = document.getElementById('hamburger');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const closeSidebar = document.getElementById('closeSidebar');
+    const overlay = document.getElementById('overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+
+    // Fungsi Buka Menu
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            mobileSidebar.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Kunci scroll
+        });
+    }
+
+    // Fungsi Tutup Menu
+    function closeMenu() {
+        mobileSidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = ''; // Aktifkan scroll
+    }
+
+    if (closeSidebar) closeSidebar.addEventListener('click', closeMenu);
+    if (overlay) overlay.addEventListener('click', closeMenu);
+
+    // Tutup jika link diklik
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+})();

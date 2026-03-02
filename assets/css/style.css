@@ -1705,6 +1705,17 @@ footer{
   border-top:1px solid var(--border);
 }
 
+/* Footer Brand Center Mobile */
+.footer-brand{
+    display:flex;
+    justify-content:center;
+}
+
+.footer-logo-img{
+    max-width:140px;
+    height:auto;
+}
+
 /* ================= RESPONSIVE ================= */
 @media(max-width:960px){
   .about-main{

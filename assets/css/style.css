@@ -1716,6 +1716,11 @@ footer{
     height:auto;
 }
 
+.building-name{
+    font-weight:600;
+    color:#d4a24c; /* warna emas seperti judul */
+}
+
 /* ================= RESPONSIVE ================= */
 @media(max-width:960px){
   .about-main{

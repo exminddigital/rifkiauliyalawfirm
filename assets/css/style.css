@@ -268,9 +268,84 @@ header.scrolled{
   margin-top: auto;
 }
  
-@media (max-width: 600px) {
-  .hero-news-grid { flex-direction: column; }
-  .news-ticker-wrap { max-width: 100%; }
+@media (max-width: 768px) {
+  /* Hero layout */
+  .hero {
+    align-items: flex-start;
+    min-height: 100svh;
+  }
+  .hero-content {
+    padding: 100px 18px 40px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Badge */
+  .hero-badge {
+    font-size: 11px;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+  }
+
+  /* Heading & paragraph */
+  .hero h1 {
+    font-size: 30px;
+    max-width: 100%;
+    line-height: 1.25;
+  }
+  .hero p {
+    font-size: 14px;
+    max-width: 100%;
+    margin-top: 14px;
+    line-height: 1.7;
+  }
+
+  /* News ticker */
+  .news-ticker-wrap {
+    max-width: 100%;
+    width: 100%;
+    margin: 20px 0 16px;
+    height: 32px;
+  }
+  .ticker-label {
+    font-size: 9px;
+    padding: 0 10px;
+    letter-spacing: 1px;
+  }
+  .ticker-track {
+    font-size: 11px;
+  }
+
+  /* News cards: stack vertically, full width */
+  .hero-news-grid {
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .hero-news-card {
+    min-width: unset;
+    width: 100%;
+    padding: 12px 12px 10px;
+    gap: 6px;
+  }
+  .hero-news-card p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .news-tag {
+    font-size: 9px;
+  }
+  .news-date {
+    font-size: 10px;
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    margin-top: 28px;
+    font-size: 11px;
+  }
 }
 
 /* ================= ABOUT PREVIEW ================= */
@@ -1198,13 +1273,11 @@ footer {
 }
 
 .footer-logo-img {
-    max-width: 180px; /* Atur lebar logo sesuai keinginan */
+    max-width: 160px;
+    width: 100%;
     height: auto;
     display: block;
-}
-
-/* Jika kamu ingin logo sedikit bercahaya di latar gelap */
-.footer-logo-img {
+    object-fit: contain;
     filter: drop-shadow(0px 0px 5px rgba(212, 162, 89, 0.2));
 }
 
@@ -1794,15 +1867,17 @@ footer{
   border-top:1px solid var(--border);
 }
 
-/* Footer Brand Center Mobile */
+/* Footer Brand */
 .footer-brand{
     display:flex;
-    justify-content:center;
+    flex-direction:column;
+    align-items:center;
 }
 
-.footer-logo-img{
-    max-width:140px;
-    height:auto;
+@media(max-width:600px){
+  .footer-brand{
+    align-items:center;
+  }
 }
 
 .building-name{
